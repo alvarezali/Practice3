@@ -31,15 +31,16 @@
 --white_10: rgba(255, 255, 255, .10);
 --white_05: rgba(255, 255, 255, .05);
 
+/*__________margin__________*/
+
+--logo_wrapper: clamp(0.35rem, 8vw - 3.6rem, 2rem);
 
 }
 
 
 /*===========================
-            Navbar
+            Top
 ===========================*/
-
-/*========== Top ==========*/
 
 .full-container{
     padding: 0;
@@ -62,7 +63,9 @@
     color: var(--white);
 }
 
-/*========== Navbar ==========*/
+/*===========================
+            Navbar
+===========================*/
 
 .nav-container {
     width: 100%;
@@ -72,12 +75,13 @@
 .nav-wrapper {
     width: 100%;
     display: flex;
+    justify-content: flex-start;
 }
 
 .nav-logo-wrapper {
     width: auto;
     height: 3.5rem;
-    margin: 0 0 0 2rem;
+    margin: 0 0 0 var(--logo_wrapper);
     padding: 0 .5rem 0 1.5rem;
     display: flex;
     justify-content: center;
@@ -130,6 +134,7 @@
 }
 
 .nav-ul {
+    width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -143,11 +148,13 @@
     margin: 0;
     padding: 1rem 1rem .8rem 1rem;
     border-bottom: 3px solid transparent;
+    transition: background 250ms ease-out,
+                border-bottom 250ms ease-out;
 }
 
 .nav-li:hover {
     cursor: pointer;
-    background: var(--white_15);
+    background: var(--white_10);
     border-bottom: 3px solid var(--more_link);
 }
 
@@ -184,13 +191,46 @@
     bottom: 0;
 }
 
-/*========== More ==========*/
+/*========== Search ==========*/
+
+.nav-search-form {
+    width: 25rem;
+    height: auto;
+    margin: 0;
+    padding: 0 .5rem 0 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+}
+
+.nav-search-input{
+    position: relative;
+    width: 8rem;
+    height: 2.5rem;
+    padding: .5rem;
+    border-radius: .25rem;
+    color: var(--black);
+}
+
+.nav-search-submit {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: .25rem;
+    color: var(--black);
+    background: var(--logo-blue);
+    transition: background 250ms ease-out;
+}
+
+.nav-search-submit:hover {
+    background: var(--more_link);
+}
+
+/*========== More dropdown ==========*/
 
 .more-container {
     padding: 1rem 3.5rem  0 3.5rem;
     background: var(--more);
     border-bottom: 3px solid var(--more_bottom);
-
 }
 
 .more-title {
@@ -226,5 +266,187 @@
     color: var(--more_link);
 }
 
+/*========== More Buttons ==========*/
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+.more-btn {
+    position: relative;
+    width: 95%;
+    padding: .5rem;
+    margin: 0 0 .75rem 0;
+    text-align: center;
+    border: 1px solid var(--more_bottom);
+}
+
+.more-btn::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: background 250ms ease-out;
+}
+
+.more-btn:hover {
+    cursor: pointer;
+}
+
+.more-btn:hover:after {
+    background: var(--white_50);
+}
+
+.more-a {
+    position: relative;
+    font-size: .95rem;
+    color: var(--more_link);
+    z-index: 1;
+}
+
+.help-btn, .fares-btn, .maps-btn, .status-btn, .plan-btn {
+    display: none;
+}
 
 
+/*===========================
+            @Media
+===========================*/
+
+@media screen and (max-width: 1102px) {
+
+    .btn-grid {
+        padding: 0 0 1rem 0;
+    }
+
+    .help-btn {
+        display: inline-block;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .help-li {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 951px) {
+
+    .fares-btn {
+        display: inline-block;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .help-btn {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .fares-li {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 860px) {
+
+    .maps-btn {
+        display: inline-block;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .fares-btn {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .help-btn {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .maps-li {
+        display: none;
+    }   
+}
+
+@media screen and (max-width: 770px) {
+
+    .status-btn {
+        display: inline-block;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .maps-btn {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .fares-btn {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .help-btn {
+        grid-column: 2 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .status-li {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .plan-btn {
+        display: inline-block;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .status-btn {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .maps-btn {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .fares-btn {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .help-btn {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .plan-li {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    
+    .ways-wrapper {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .ways2-ul{
+        border-left: 1px solid var(--more_bottom);
+    }
+}

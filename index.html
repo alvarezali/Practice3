@@ -9,6 +9,8 @@
     <title>Client-side form validation</title>
 </head>
 <body>
+
+    <!-- ================== Navbar ================== -->
     <div class="container-fluid full-container">
 
         <div class="navtop-wrapper">
@@ -24,21 +26,43 @@
                 </div>
 
                 <ul class="nav-ul">
-                    <li class="nav-li"><a href="" class="nav-a">Plan a journey</a></li>
-                    <li class="nav-li"><a href="" class="nav-a">Status updates</a></li>
-                    <li class="nav-li"><a href="" class="nav-a">Maps</a></li>
-                    <li class="nav-li"><a href="" class="nav-a">Fares</a></li>
-                    <li class="nav-li"><a href="" class="nav-a">Help & contacts</a></li>
+                    <li class="nav-li plan-li"><a href="" class="nav-a">Plan a journey</a></li>
+                    <li class="nav-li status-li"><a href="" class="nav-a">Status updates</a></li>
+                    <li class="nav-li maps-li"><a href="" class="nav-a">Maps</a></li>
+                    <li class="nav-li fares-li"><a href="" class="nav-a">Fares</a></li>
+                    <li class="nav-li help-li"><a href="" class="nav-a">Help & contacts</a></li>
                     <li class="nav-li more-li"><a href="" class="nav-a">More</a><span class="arrow-down">&#8964</span><span class="arrow-up">&#8963</span></li>  
-                </ul>                         
+                </ul>  
+                
+                <form action="" class="nav-search-form">
+                    <input type="text" class="nav-search-input" id="search" name="search" placeholder="Search...">
+                    <button type="submit" class="nav-search-submit"><i class="fa fa-search"></i></button>
+                </form>                       
             </div>
         </nav>
     </div>                       
-                        
+                 
+    <!-- ================== More dropdown ================== -->
+
     <div class="container-fluid more-container">
+
+        <div class="btn-grid">
+            
+            <div class="more-btn plan-btn"><a href="" class="more-a">Plan journey</a></div>
+
+            <div class="more-btn status-btn"><a href="" class="more-a">Status update</a></div>
+
+            <div class="more-btn maps-btn"><a href="" class="more-a">Maps</a></div>
+
+            <div class="more-btn fares-btn"><a href="" class="more-a">Fares</a></div>
+
+            <div class="more-btn help-btn"><a href="" class="more-a">Help & contacts</a></div>
+
+        </div>
+
         <div class="row">
             <div class="col-lg-3 section">
-                <p class="more-title">Travel information</ class="more-title">
+                <p class="more-title">Travel information</p>
                 <ul class="travel-ul">
                     <li class="travel-li"><a href="" class="travel-a">Visiting London</a></li>
                     <li class="travel-li"><a href="" class="travel-a">Transport accessibility</a></li>
@@ -52,7 +76,7 @@
             <div class="col-lg-6 container section">
                 <p class="more-title">Ways to get around</p>
                 <div class="row d-flex justify-content-start ways-wrapper">
-                    <ul class="col-5 ways1-ul">
+                    <ul class="col-md-5 ways1-ul">
                         <li class="ways-li"><a href="" class="ways-a">Cycling</a></li>
                         <li class="ways-li"><a href="" class="ways-a">Walking</a></li>
                         <li class="ways-li"><a href="" class="ways-a">Tube</a></li>
@@ -61,7 +85,7 @@
                         <li class="ways-li"><a href="" class="ways-a">River</a></li>
                         <li class="ways-li"><a href="" class="ways-a">Dial-a-Ride</a></li>
                     </ul>
-                    <ul class="col-5 ways2-ul">
+                    <ul class="col-md-5 ways2-ul">
                         <li class="ways-li"><a href="" class="ways-a">Buses</a></li>
                         <li class="ways-li"><a href="" class="ways-a">Driving</a></li>
                         <li class="ways-li"><a href="" class="ways-a">DLR</a></li>
