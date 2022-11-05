@@ -18,9 +18,11 @@
 --gray-nav: rgba(45, 48, 57, 1);
 --logo-blue: rgba(17, 59 ,146, 1); 
 --more: rgba(239,246,253, 1); 
---more_bottom:rgba(204, 204, 204, 1);
+--more_bottom: rgba(204, 204, 204, 1);
 --more_link: rgba(32, 112, 176, 1) ;
 --blue_cadet: rgba(95, 158, 160,1);
+--navigation: rgba(238, 238, 238, 1);
+--navigation_home: rgba(26, 90, 146, 1); 
 --black: rgba(0, 0, 0, 1);
 --white: rgba(255, 255, 255, 1);
 --white_75: rgba(255, 255, 255, .75);
@@ -39,7 +41,7 @@
 
 
 /*===========================
-            Top
+        Navbar Top
 ===========================*/
 
 .full-container{
@@ -191,7 +193,7 @@
     bottom: 0;
 }
 
-/*========== Search ==========*/
+/*========== Search box ==========*/
 
 .nav-search-form {
     width: 25rem;
@@ -266,7 +268,7 @@
     color: var(--more_link);
 }
 
-/*========== More Buttons ==========*/
+/*========== More dropdown buttons ==========*/
 
 .btn-grid {
     display: grid;
@@ -311,6 +313,153 @@
 .help-btn, .fares-btn, .maps-btn, .status-btn, .plan-btn {
     display: none;
 }
+
+
+/*========== Create account section ==========*/
+
+.create-top-wrapper {
+    width: auto;
+    height: auto;
+    margin: .75rem 5% 0 5%;
+}
+
+.navigation-container { 
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.home {
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    margin: 0 .15rem 0 0;
+    font-size: 1.5rem;
+    background: var(--navigation);
+    color:var(--navigation_home);
+    border-bottom: 1px solid var(--more_bottom);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.home::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    border-top: 1rem solid transparent;
+    border-left: .75rem solid var(--navigation);
+    border-bottom: 1rem solid transparent;
+}
+
+.driving span {
+    padding: 0 0 0 .75rem;
+    font-size: .95rem;
+    color:var(--more_link);
+}
+
+.driving {
+    position: relative;
+    width: 4.5rem;
+    height: 2rem;
+    margin: 0 .15rem 0 0;
+    background: var(--navigation);
+    border-bottom: 1px solid var(--more_bottom);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+}
+
+.driving::before, .driving::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.driving::before {
+    left: 0;
+    border-top: 1rem solid transparent;
+    border-left: .75rem solid var(--white);
+    border-bottom: 1rem solid transparent;
+}
+
+.driving::after {
+    left: 100%;
+    border-top: 1rem solid transparent;
+    border-left: .75rem solid var(--navigation);
+    border-bottom: 1rem solid transparent;
+}
+
+.create span {
+    padding: 0 0 0 .75rem;
+    font-size: .95rem;
+    color:var(--black);
+}
+
+.create{
+    position: relative;
+    width: 10rem;
+    height: 2rem;
+    margin: 0 .15rem 0 0;
+    background: var(--navigation);
+    border-bottom: 1px solid var(--more_bottom);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create::before, .create::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.create::before {
+    left: 0;
+    border-top: 1rem solid transparent;
+    border-left: .75rem solid var(--white);
+    border-bottom: 1rem solid transparent;
+}
+
+.create::after {
+    left: 100%;
+    border-top: 1rem solid transparent;
+    border-left: .75rem solid var(--navigation);
+    border-bottom: 1rem solid transparent;
+}
+
+.create-title, .create-subtitle, .create-info {
+    color: var(--black);
+}
+
+.create-title {
+    padding: 2rem 0 1rem 0;
+    font-size: 2.75rem;
+}
+
+.create-subtitle {
+    padding: 0 0 .5rem 0;
+}
+
+.create-info {
+    width: 65%;
+    border: 1px solid red;
+}
+
+
 
 
 /*===========================
@@ -435,7 +584,6 @@
         display: none;
     }
 }
-
 
 @media screen and (max-width: 992px) {
     
