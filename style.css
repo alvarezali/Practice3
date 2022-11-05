@@ -10,6 +10,7 @@
 }
 
 
+
 :root {
 
 /*__________colors__________*/
@@ -18,6 +19,7 @@
 --gray-nav: rgba(45, 48, 57, 1);
 --logo-blue: rgba(17, 59 ,146, 1); 
 --more: rgba(239,246,253, 1); 
+--more_arrow: rgba(97, 192, 193, 1);    
 --more_bottom: rgba(204, 204, 204, 1);
 --more_link: rgba(32, 112, 176, 1) ;
 --blue_cadet: rgba(95, 158, 160,1);
@@ -46,7 +48,7 @@
 
 .full-container{
     padding: 0;
-    height: 5.20rem;
+    height: auto;
     background: var(--dark-nav);
 }
 
@@ -161,36 +163,92 @@
 }
 
 .nav-a {
+    width: 100%;
+    height: 100%;
     font-size: .9rem;
     letter-spacing: .025rem;
 }
 
-.nav-a:hover{
+.nav-a:visited {
     color: var(--white);
 }
 
 .more-li {
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 1rem 1rem .8rem 1rem;
+    border-bottom: 3px solid transparent;
+}
+
+.more-li-hover {
+    transition: background 250ms ease-out,
+                border-bottom 250ms ease-out;
+}
+
+.more-li-hover:hover {
+    background: var(--white_10);
+    border-bottom: 3px solid var(--more_link);
+    transition: background 0ms linear;
+}
+
+.more-li::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.more-toggle {
+    background: var(--more);
+}
+
+.more-a {
     position: relative;
 }
 
-.arrow-up, .arrow-down {
+.more-a-toggle {
+    color: var(--black);
+}
+
+.more-a-toggle:visited {
+    color: var(--black);
+}
+
+.more-up, .more-down {
     position: absolute;
-    font-size: 1.25rem;
+    font-size: 1.30rem;
     right: -.1rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
 }
 
-.arrow-down {
+.more-down {
+    opacity: 1;
     top: 0;
     bottom: .25rem;
+    color: var(--more_arrow);
 }
 
-.arrow-up {
-    display: none;
+.more-down-toggle {
+    opacity: 0;
+}
+
+.more-up {
+    opacity: 0;
     top: 1rem;
     bottom: 0;
+    color: var(--more_arrow);
+}
+
+.more-up-toggle {
+    opacity: 1;
 }
 
 /*========== Search box ==========*/
@@ -227,12 +285,22 @@
     background: var(--more_link);
 }
 
+.filler-top {
+    width: 100%;
+    height: .15rem;
+    background: var(--dark-nav);
+}
+
 /*========== More dropdown ==========*/
 
 .more-container {
     padding: 1rem 3.5rem  0 3.5rem;
     background: var(--more);
     border-bottom: 3px solid var(--more_bottom);
+}
+
+.more-container-toggle {
+    display: none;
 }
 
 .more-title {
@@ -314,8 +382,9 @@
     display: none;
 }
 
-
-/*========== Create account section ==========*/
+/*===========================
+    Create account section
+===========================*/
 
 .create-top-wrapper {
     width: auto;
@@ -456,7 +525,6 @@
 
 .create-info {
     width: 65%;
-    border: 1px solid red;
 }
 
 
