@@ -385,11 +385,15 @@
 /*===========================
     Create account section
 ===========================*/
+.create-container {
+    border: 1px solid black;
+}
 
 .create-top-wrapper {
     width: auto;
     height: auto;
-    margin: .75rem 5% 0 5%;
+    margin: .75rem 5% .75rem 5%;
+    border: 1px solid red;
 }
 
 .navigation-container { 
@@ -475,7 +479,7 @@
     color:var(--black);
 }
 
-.create{
+.create {
     position: relative;
     width: 10rem;
     height: 2rem;
@@ -510,7 +514,14 @@
     border-bottom: 1rem solid transparent;
 }
 
-.create-title, .create-subtitle, .create-info {
+.account-container {
+    width: 66%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid green;
+}
+
+.create-title, .create-subtitle, .create-info, .account-type, .company-title {
     color: var(--black);
 }
 
@@ -523,10 +534,9 @@
     padding: 0 0 .5rem 0;
 }
 
-.create-info {
-    width: 65%;
+.company-container {
+    border: 1px solid black;
 }
-
 
 
 
