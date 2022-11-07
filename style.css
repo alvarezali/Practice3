@@ -147,6 +147,7 @@
 }
 
 .nav-li {
+    position: relative;
     width: auto;
     height: auto;
     margin: 0;
@@ -156,10 +157,24 @@
                 border-bottom 250ms ease-out;
 }
 
+.nav-li::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    bottom: -.38rem;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
 .nav-li:hover {
     cursor: pointer;
     background: var(--white_10);
-    border-bottom: 3px solid var(--more_link);
+}
+
+.nav-li:hover::after {
+    background: var(--more_link);
 }
 
 .nav-a {
@@ -184,13 +199,11 @@
 }
 
 .more-li-hover {
-    transition: background 250ms ease-out,
-                border-bottom 250ms ease-out;
+    transition: background 250ms ease-out;
 }
 
 .more-li-hover:hover {
     background: var(--white_10);
-    border-bottom: 3px solid var(--more_link);
     transition: background 0ms linear;
 }
 
@@ -202,6 +215,27 @@
     right: 0;
     left: 0;
     z-index: 1;
+}
+
+.more-li::before {
+    position: absolute;
+    content: '';
+    height: 4px;
+    right: 0;
+    left: 0;
+    bottom: -.38rem;
+}
+
+.more-li:hover::before {
+    background: var(--more_link);
+}
+
+.check-toggle {
+    display: none;
+}
+
+.check-toggle:checked ~ .more-li::before {
+    background: var(--more);
 }
 
 .more-toggle {

@@ -3,6 +3,7 @@ const moreLink = document.getElementById('more-a');
 const moreContainer = document.getElementById('more-container');
 const moreUp = document.getElementById('more-up');
 const moreDown = document.getElementById('more-down');
+const box = document.getElementById('check-toggle');
 
 moreBtn.addEventListener('click', () => {
     moreBtn.classList.toggle('more-toggle');
@@ -11,4 +12,5 @@ moreBtn.addEventListener('click', () => {
     moreContainer.classList.toggle('more-container-toggle');
     moreUp.classList.toggle('more-up-toggle');
     moreDown.classList.toggle('more-down-toggle');
+    box.checked = !box.checked;
 });
