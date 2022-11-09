@@ -37,8 +37,3 @@ bAccount.addEventListener('click', () => {
     }
 });
 
-
-
-
-console.log(pAccount.checked)
-console.log(pAccount.parentElement)

@@ -564,10 +564,12 @@
 .create-title {
     padding: 2rem 0 1rem 0;
     font-size: 2.75rem;
+    font-weight: 400;
 }
 
 .create-subtitle {
     padding: 0 0 .5rem 0;
+    font-weight: 400;
 }
 
 .create-info {
@@ -613,15 +615,14 @@
     width: .6rem;
     height: .6rem;
     border-radius: 50%;
-    transform: scale(0);
     background: var(--more_link);
+    transform: scale(0);
+    transition: transform 100ms ease-out;
 }
 
 .account-radio:checked::before {
     transform: scale(1);
 }
-
-
 
 .account-lbl {
     width: 100%;
@@ -652,7 +653,7 @@
 }
 
 .company-name {
-    width: 20rem;
+    width: 50%;
     height: 3rem;
     margin: .5rem 0 0 0;
     border: 1px solid black;
