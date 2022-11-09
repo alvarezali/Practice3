@@ -119,12 +119,15 @@
     <!-- ================== Create an account section ================== -->
 
     <div class="create-container">
+
         <div class="create-top-wrapper">
+
             <div class="navigation-container">
                 <div class="home">&#8962</div>
                 <div class="driving"><span>Driving</span></div>
                 <div class="create"><span>Create an account</span></div>
             </div>
+
             <div class="account-container">
                 <h1 class="create-title">Create an account</h1>
                 <h4 class="create-subtitle">Account type</h4>
@@ -132,25 +135,23 @@
                     business account, you will be able to add up to 5 people as 
                     authorised users to help you manage your account. Each user 
                     will be given unique sign in credentials.</p>
-                
-                <label class="account-type">
-                    <input type="radio" checked="checked" name="account-radio">
-                    <span class="checkmark"></span>
-                    Personal account
-                </label>
 
-                <label class="account-type">
-                    <input type="radio" checked="checked" name="account-radio">
-                    <span class="checkmark"></span>
-                    Business account
-                </label>
+                <div class="type-container">
+                    <div class="type-wrapper">
+                        <input class="account-radio" id="personal-account" type="radio" name="account-type" id="personal-account" value="personal">
+                        <label class="account-lbl" for="personal-account">Personal account</label>
+                    </div>
+
+                    <div class="type-wrapper">
+                        <input class="account-radio" id="business-account" type="radio" name="account-type" id="business-account" value="business">
+                        <label class="account-lbl" for="business-account">Business account</label>
+                    </div>
+                </div>
 
                 <div class="company-container">
                     <div class="company-wrapper">
-                        <h6 class="company-title">Company name*</h6>
-                        <label for="company-name">
-                            <input type="text" name="company-name" id="company-name" class="company-name" placeholder="Company name...">
-                        </label>
+                        <label class="company-lbl" for="company-name">Company name*</label>
+                        <input type="text" class="company-name"  name="company-name" id="company-name" placeholder="Company name...">
                     </div>
                 </div>
 

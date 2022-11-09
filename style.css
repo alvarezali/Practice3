@@ -548,14 +548,16 @@
     border-bottom: 1rem solid transparent;
 }
 
+/*========== Create account ==========*/
+
 .account-container {
-    width: 66%;
+    width: 64%;
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
+    border: 1px solid blue;
 }
 
-.create-title, .create-subtitle, .create-info, .account-type, .company-title {
+.create-title, .create-subtitle, .create-info, .account-lbl, .company-lbl {
     color: var(--black);
 }
 
@@ -568,11 +570,93 @@
     padding: 0 0 .5rem 0;
 }
 
-.company-container {
+.create-info {
+    font-size: .98rem;
+}
+
+.type-container {
+    margin: 0;
+    padding: 1.5rem 0 0 0;
+}
+
+.type-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0 0 0;
+    border: 1px solid transparent;
+}
+
+.account-border {
+    border: 1px dashed black;
+}
+
+.account-radio {
+    appearance: none;
+    position: relative;
+    margin: 0;
+    background: var(--white);
+    width: 1.60rem;
+    height: 1.60rem;
+    border-radius: 50%;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-radio::before {
+    position: absolute;
+    content: '';
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    transform: scale(0);
+    background: var(--more_link);
+}
+
+.account-radio:checked::before {
+    transform: scale(1);
 }
 
 
+
+.account-lbl {
+    width: 100%;
+    height: 2.5rem;
+    font-size: .98rem;
+    line-height: 2.5rem;
+    padding: 0 0 0 1.5rem;
+}
+
+.company-container {
+    width: 100%;
+    height: auto;
+}
+
+.company-wrapper {
+    width: 100%;
+    height: 9.5rem;
+    padding: 1.5rem 1.25rem 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: var(--more);
+    border: 1px solid var(--more_bottom);
+}
+
+.company-lbl {
+    font-size: 1rem;
+}
+
+.company-name {
+    width: 20rem;
+    height: 3rem;
+    margin: .5rem 0 0 0;
+    border: 1px solid black;
+}
 
 /*===========================
             @Media
