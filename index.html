@@ -138,7 +138,7 @@
 
                 <div class="type-container">
                     <div class="type-wrapper">
-                        <input class="account-radio personal-radio" id="personal-account" type="radio" name="account-type" value="personal-account">
+                        <input class="account-radio personal-radio" id="personal-account" type="radio" name="account-type" value="personal-account" checked="checked">
                         <label class="account-lbl" for="personal-account">Personal account</label>
                     </div>
 
@@ -148,13 +148,43 @@
                     </div>
                 </div>
 
-                <div class="company-container">
+                <div class="company-container" id="company-container">
                     <div class="company-wrapper">
                         <label class="company-lbl" for="company-name">Company name*</label>
-                        <input type="text" class="company-name"  name="company-name" id="company-name" placeholder="Company name...">
+                        <input type="text" class="company-name"  name="company-name" id="company-name" placeholder="Your company name here...">
                     </div>
                 </div>
 
+                <div class="question-container" id="question-container">
+                    <div class="question-wrapper">
+                        <p class="question">What's the difference between a personal 
+                            and business account?</p>
+                    </div>
+                    <div class="answer-wrapper">
+                        <p>There is little difference between these account types.</p>
+                        <p>With either account you can nominate up to 5 account users 
+                            to help manage it. Each user will get their own sign in 
+                            credentials.</p>
+                        
+                        <p><strong>Personal account users</strong> can set up <a href="#" class="p-link">Auto Pay</a>, an automated 
+                            payment service for up to 5 vehicles. Suitable for:</p>
+
+                        <ul>
+                            <li>Resident's discount</li>
+                            <li>Blue Badge holders</li>
+                            <li>9+ seater discount</li>
+                            <li>Cleaner vehicle discount</li>
+                            <li>Motor tricycles</li>
+                            <li>Roadside recovery vehicles</li>
+                        </ul>
+                        <p><strong>Business account users</strong> can set up <a href="#" class="p-link">Auto Pay</a> or Fleet Auto Pay, 
+                            an automated payment service for companies with a fleet of 6 
+                            or more vehicles. Also suitable for accredited breakdown vehicle 
+                            discount.</p>
+                    </div>
+
+
+                </div>
             </div>
         </div>
     </div>

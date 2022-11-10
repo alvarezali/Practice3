@@ -11,6 +11,7 @@ const pAccount = document.getElementById('personal-account');
 const pAccountParent = pAccount.parentElement;
 const bAccount = document.getElementById('business-account');
 const bAccountParent = bAccount.parentElement;
+const companyDiv = document.getElementById('company-container');
 
 moreBtn.addEventListener('click', () => {
     moreBtn.classList.toggle('more-toggle');
@@ -27,6 +28,7 @@ pAccount.addEventListener('click', () => {
     if(pAccount.checked) {
         pAccountParent.classList.add('account-border');
         bAccountParent.classList.remove('account-border');
+        companyDiv.classList.remove('company-container-toggle');
     }
 });
 
@@ -34,6 +36,7 @@ bAccount.addEventListener('click', () => {
     if(bAccount.checked) {
         bAccountParent.classList.add('account-border');
         pAccountParent.classList.remove('account-border');
+        companyDiv.classList.add('company-container-toggle');
     }
 });
 
