@@ -1,4 +1,4 @@
-//More button related elements and classes
+//More button related elements
 const moreBtn = document.getElementById('more-li');
 const moreLink = document.getElementById('more-a');
 const moreContainer = document.getElementById('more-container');
@@ -12,6 +12,10 @@ const pAccountParent = pAccount.parentElement;
 const bAccount = document.getElementById('business-account');
 const bAccountParent = bAccount.parentElement;
 const companyDiv = document.getElementById('company-container');
+
+//Question wrapper element
+const question = document.getElementById('question-wrapper');
+const answer = document.getElementById('answer-wrapper');
 
 moreBtn.addEventListener('click', () => {
     moreBtn.classList.toggle('more-toggle');
@@ -38,5 +42,9 @@ bAccount.addEventListener('click', () => {
         pAccountParent.classList.remove('account-border');
         companyDiv.classList.add('company-container-toggle');
     }
+});
+
+question.addEventListener('click', () => {
+    answer.classList.toggle('answer-wrapper-toggle');
 });
 

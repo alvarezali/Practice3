@@ -127,65 +127,108 @@
                 <div class="driving"><span>Driving</span></div>
                 <div class="create"><span>Create an account</span></div>
             </div>
+            <form action="" method="">
+                <div class="account-container">
+                    <h1 class="create-title">Create an account</h1>
+                    <h4 class="create-subtitle">Account type</h4>
+                    <p class="create-info">Once you have opened a personal account or 
+                        business account, you will be able to add up to 5 people as 
+                        authorised users to help you manage your account. Each user 
+                        will be given unique sign in credentials.</p>
 
-            <div class="account-container">
-                <h1 class="create-title">Create an account</h1>
-                <h4 class="create-subtitle">Account type</h4>
-                <p class="create-info">Once you have opened a personal account or 
-                    business account, you will be able to add up to 5 people as 
-                    authorised users to help you manage your account. Each user 
-                    will be given unique sign in credentials.</p>
+                    <div class="type-container">
+                        <div class="type-wrapper">
+                            <input class="account-radio personal-radio" id="personal-account" type="radio" name="account-type" value="personal-account" checked="checked">
+                            <label class="account-lbl" for="personal-account">Personal account</label>
+                        </div>
 
-                <div class="type-container">
-                    <div class="type-wrapper">
-                        <input class="account-radio personal-radio" id="personal-account" type="radio" name="account-type" value="personal-account" checked="checked">
-                        <label class="account-lbl" for="personal-account">Personal account</label>
+                        <div class="type-wrapper">
+                            <input class="account-radio business-radio" id="business-account" type="radio" name="account-type" value="business-account">
+                            <label class="account-lbl" for="business-account">Business account</label>
+                        </div>
                     </div>
 
-                    <div class="type-wrapper">
-                        <input class="account-radio business-radio" id="business-account" type="radio" name="account-type" value="business-account">
-                        <label class="account-lbl" for="business-account">Business account</label>
+                    <div class="company-container" id="company-container">
+                        <div class="company-wrapper">
+                            <label class="company-lbl" for="company-name">Company name*</label>
+                            <input type="text" class="company-name"  name="company-name" id="company-name" placeholder="Your company name here...">
+                        </div>
                     </div>
-                </div>
 
-                <div class="company-container" id="company-container">
-                    <div class="company-wrapper">
-                        <label class="company-lbl" for="company-name">Company name*</label>
-                        <input type="text" class="company-name"  name="company-name" id="company-name" placeholder="Your company name here...">
-                    </div>
-                </div>
+                    <div class="question-container" id="question-container">
+                        <div class="question-wrapper" id="question-wrapper">
+                            <p class="question">What's the difference between a personal 
+                                and business account?</p>
+                        </div>
+                        <div class="answer-wrapper" id="answer-wrapper">
+                            <p>There is little difference between these account types.</p>
+                            <p>With either account you can nominate up to 5 account users 
+                                to help manage it. Each user will get their own sign in 
+                                credentials.</p>
+                            
+                            <p><strong>Personal account users</strong> can set up <a href="#" class="p-link">Auto Pay</a>, an automated 
+                                payment service for up to 5 vehicles. Suitable for:</p>
 
-                <div class="question-container" id="question-container">
-                    <div class="question-wrapper">
-                        <p class="question">What's the difference between a personal 
-                            and business account?</p>
-                    </div>
-                    <div class="answer-wrapper">
-                        <p>There is little difference between these account types.</p>
-                        <p>With either account you can nominate up to 5 account users 
-                            to help manage it. Each user will get their own sign in 
-                            credentials.</p>
+                            <ul>
+                                <li>Resident's discount</li>
+                                <li>Blue Badge holders</li>
+                                <li>9+ seater discount</li>
+                                <li>Cleaner vehicle discount</li>
+                                <li>Motor tricycles</li>
+                                <li>Roadside recovery vehicles</li>
+                            </ul>
+                            <p><strong>Business account users</strong> can set up <a href="#" class="p-link">Auto Pay</a> or Fleet Auto Pay, 
+                                an automated payment service for companies with a fleet of 6 
+                                or more vehicles. Also suitable for accredited breakdown vehicle 
+                                discount.</p>
+                        </div>
                         
-                        <p><strong>Personal account users</strong> can set up <a href="#" class="p-link">Auto Pay</a>, an automated 
-                            payment service for up to 5 vehicles. Suitable for:</p>
+                        <div class="fields-container">
+                            <div class="fields-wrapper">
+                                <div class="name-wrapper">
+                                    <h2>Name (this person will be the account holder)</h2>
+                                    
+                                    <label for="first-name">First Name*</label>
+                                    <input type="text" class="first-name" id="first-name">
+                                    
+                                    <label for="last-name">Surname*</label>
+                                    <input type="text" class="surname" id="surname">
+                                </div>
 
-                        <ul>
-                            <li>Resident's discount</li>
-                            <li>Blue Badge holders</li>
-                            <li>9+ seater discount</li>
-                            <li>Cleaner vehicle discount</li>
-                            <li>Motor tricycles</li>
-                            <li>Roadside recovery vehicles</li>
-                        </ul>
-                        <p><strong>Business account users</strong> can set up <a href="#" class="p-link">Auto Pay</a> or Fleet Auto Pay, 
-                            an automated payment service for companies with a fleet of 6 
-                            or more vehicles. Also suitable for accredited breakdown vehicle 
-                            discount.</p>
+                                <div class="email-wrapper">
+                                    <h2>Email address</h2>
+                                    <p>All account-related correspondence will be sent to the email address 
+                                        you supply here.</p>
+
+                                    <p>If you are setting up an account on behalf of a business, you may 
+                                        prefer to enter your individual work email address rather than a 
+                                        group one. This will make it easier to send and receive important 
+                                        emails.</p>
+                                    
+                                    <label for="email">Email address*</label>
+                                    <input type="text" class="email" type="email">
+
+                                    <label for="confirm-email">Confirm email address*</label>
+                                    <input type="text" class="confirm-email" type="confirm-email">
+                                </div>
+
+                                <div class="phone-wrapper">
+                                    <label for="phone">Telephone number*</label>
+                                    <input type="text" class="phone" type="phone">
+                                </div>
+
+                                <div class="password-wrapper">
+                                    <label for="password">Password*</label>
+                                    <input type="text" class="password" type="password">
+
+                                    <label for="confirm-password">Confirm password*</label>
+                                    <input type="text" class="confirm-password" type="confirm-password">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 
