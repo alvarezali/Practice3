@@ -25,6 +25,7 @@
 --blue_cadet: rgba(95, 158, 160,1);
 --navigation: rgba(238, 238, 238, 1);
 --navigation_home: rgba(26, 90, 146, 1); 
+--select-menu: rgba(233, 233, 237);
 --black: rgba(0, 0, 0, 1);
 --white: rgba(255, 255, 255, 1);
 --white_75: rgba(255, 255, 255, .75);
@@ -454,6 +455,10 @@
     z-index: 10;
 }
 
+[class^="fa-house"]:before, [class*=" fa-house"]:before {
+    color: var(--navigation_home);
+}
+
 .home::after {
     position: absolute;
     content: '';
@@ -467,9 +472,14 @@
     border-bottom: 1rem solid transparent;
 }
 
-.driving span {
+.driving a {
     padding: 0 0 0 .75rem;
     font-size: .95rem;
+    color:var(--more_link);
+}
+
+.driving:hover {
+    text-decoration: underline;
     color:var(--more_link);
 }
 
@@ -552,20 +562,40 @@
 
 /*========== Create account ==========*/
 
-:is(h1, h4, p, input, label, li, strong) {
+:is(h1, h2, h4, p, input, label, li, strong, select) {
     color: var(--black);
+}
+
+:is(h4) {
+    padding: 2rem 0 0 0;
+    font-weight: 400;
+}
+
+:is(.email-h4){
+    padding: 2rem 0 .75rem 0;
+}
+
+:is(label) {
+    font-size: 1rem;
+}
+
+:is(p, select){
+    font-size: .98rem;
+}
+
+:is(input[type=text], input[type=password], select) {
+    width: 50%;
+    height: 2.5rem;
+    margin: .5rem 0 0 0;
+    border: 1px solid black;
 }
 
 :is(a) {
     color: var(--more_link);
 }
 
-:is(input) {
-    border: 1px solid black;
-}
-
 .account-container {
-    width: 64%;
+    width: 65.5%;
     display: flex;
     flex-direction: column;
     border: 1px solid blue;
@@ -580,10 +610,6 @@
 .create-subtitle {
     padding: 0 0 .5rem 0;
     font-weight: 400;
-}
-
-.create-info {
-    font-size: .98rem;
 }
 
 .type-container {
@@ -691,12 +717,7 @@
     border: 1px solid var(--more_bottom);
 }
 
-.company-lbl {
-    font-size: 1rem;
-}
-
 .company-name {
-    width: 50%;
     height: 2.5rem;
     margin: .5rem 0 0 0;
 }
@@ -778,18 +799,36 @@
     list-style-type: disc;
 }
 
-
 .answer-wrapper-toggle {
     display: block;
 }
 
 /*========== Fields ==========*/
 
-.fields-wrapper, .name-wrapper, .email-wrapper, .phone-wrapper, .password-wrapper {
+.fields-wrapper {
     display: flex;
     flex-direction: column;
-    
+    padding: 0;
+    border-bottom: 1px dotted var(--more_bottom);
 }
+
+.name-wrapper, .email-wrapper, .phone-wrapper, .password-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem 0;
+    border-bottom: 1px dotted var(--more_bottom);
+}
+
+.person-title {
+    background: var(--select-menu);
+}
+
+.field-lbl {
+    padding: 1.75rem 0 0 0;
+}
+
+
+
 
 /*===========================
             @Media

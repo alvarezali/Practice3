@@ -116,15 +116,15 @@
         </div>
     </div>
   
-    <!-- ================== Create an account section ================== -->
+    <!-- ================== Create an account section ================== &#8962-->
 
     <div class="create-container">
 
         <div class="create-top-wrapper">
 
             <div class="navigation-container">
-                <div class="home">&#8962</div>
-                <div class="driving"><span>Driving</span></div>
+                <div class="home"><a href="#"><i class="fa-solid fa-house fa-2xs"></i></a></div>
+                <div class="driving"><a href="#">Driving</a></div>
                 <div class="create"><span>Create an account</span></div>
             </div>
             <form action="" method="">
@@ -186,17 +186,36 @@
                         <div class="fields-container">
                             <div class="fields-wrapper">
                                 <div class="name-wrapper">
-                                    <h2>Name (this person will be the account holder)</h2>
+                                    <h4>Name (this person will be the account holder)</h4>
                                     
-                                    <label for="first-name">First Name*</label>
+                                    <label for="person-title" class="field-lbl">Title*</label>
+                                    <select class="person-title" id="person-title">
+                                        <option value="0">Please select</option>
+                                        <option value="Mr">Mr</option>
+                                        <option value="Mrs">Mrs</option>
+                                        <option value="Miss">Miss</option>
+                                        <option value="Ms">Ms</option>
+                                        <option value="Dr">Dr</option>
+                                        <option value="Prof">Prof</option>
+                                        <option value="Sir">Sir</option>
+                                        <option value="Lady">Lady</option>
+                                        <option value="Reverend">Reverend</option>
+                                        <option value="Lord">Lord</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <small class="sm-person-title"></small>
+
+                                    <label for="first-name" class="field-lbl">First Name*</label>
                                     <input type="text" class="first-name" id="first-name">
+                                    <small class="sm-first-name"></small>
                                     
-                                    <label for="last-name">Surname*</label>
+                                    <label for="last-name" class="field-lbl">Surname*</label>
                                     <input type="text" class="surname" id="surname">
+                                    <small class="sm-last-name"></small>
                                 </div>
 
                                 <div class="email-wrapper">
-                                    <h2>Email address</h2>
+                                    <h4 class="email-h4">Email address</h4>
                                     <p>All account-related correspondence will be sent to the email address 
                                         you supply here.</p>
 
@@ -205,24 +224,35 @@
                                         group one. This will make it easier to send and receive important 
                                         emails.</p>
                                     
-                                    <label for="email">Email address*</label>
+                                    <label for="email" class="field-lbl">Email address*</label>
                                     <input type="text" class="email" type="email">
+                                    <small class="sm-email"></small>
 
-                                    <label for="confirm-email">Confirm email address*</label>
+                                    <label for="confirm-email" class="field-lbl">Confirm email address*</label>
                                     <input type="text" class="confirm-email" type="confirm-email">
+                                    <small class="sm-confirm-email"></small>
                                 </div>
 
                                 <div class="phone-wrapper">
-                                    <label for="phone">Telephone number*</label>
+                                    <h4>Telephone number*</h4>
+                                    <p>Add a contact telephone number</p>
+                                    <label for="phone" class="field-lbl">Telephone number</label>
                                     <input type="text" class="phone" type="phone">
+                                    <small class="sm-phone"></small>
                                 </div>
 
                                 <div class="password-wrapper">
-                                    <label for="password">Password*</label>
+                                    <h4>Password*</h4>
+                                    <p>You need to create a 6-digit number to set up secure online access to
+                                         your London Road User Charging account. This number will also help 
+                                         identify you if you contact us by phone.</p>
+                                    <label for="password" class="field-lbl">Password</label>
                                     <input type="text" class="password" type="password">
+                                    <small class="sm-password"></small>
 
-                                    <label for="confirm-password">Confirm password*</label>
+                                    <label for="confirm-password" class="field-lbl">Confirm password</label>
                                     <input type="text" class="confirm-password" type="confirm-password">
+                                    <small class="sm-confirm-password"></small>
                                 </div>
                             </div>
                         </div>
