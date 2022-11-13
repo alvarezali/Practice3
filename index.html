@@ -151,7 +151,7 @@
                     <div class="company-container" id="company-container">
                         <div class="company-wrapper">
                             <label class="company-lbl" for="company-name">Company name*</label>
-                            <input type="text" class="company-name"  name="company-name" id="company-name" placeholder="Your company name here...">
+                            <input type="text" class="company-name form-field"  name="company-name" id="company-name" placeholder="Your company name here...">
                         </div>
                     </div>
 
@@ -188,9 +188,9 @@
                                 <div class="name-wrapper">
                                     <h4>Name (this person will be the account holder)</h4>
                                     
-                                    <label for="person-title" class="field-lbl">Title*</label>
-                                    <select class="person-title" id="person-title">
-                                        <option value="0">Please select</option>
+                                    <label for="user-title" class="field-lbl">Title*</label>
+                                    <select class="user-title form-field" id="user-title">
+                                        <option value="">Please select</option>
                                         <option value="Mr">Mr</option>
                                         <option value="Mrs">Mrs</option>
                                         <option value="Miss">Miss</option>
@@ -203,14 +203,14 @@
                                         <option value="Lord">Lord</option>
                                         <option value="Other">Other</option>
                                     </select>
-                                    <small class="sm-person-title"></small>
+                                    <small class="sm-user-title"></small>
 
                                     <label for="first-name" class="field-lbl">First Name*</label>
-                                    <input type="text" class="first-name" id="first-name">
+                                    <input type="text" class="first-name form-field" id="first-name">
                                     <small class="sm-first-name"></small>
                                     
                                     <label for="last-name" class="field-lbl">Surname*</label>
-                                    <input type="text" class="surname" id="surname">
+                                    <input type="text" class="surname form-field" id="surname">
                                     <small class="sm-last-name"></small>
                                 </div>
 
@@ -225,33 +225,33 @@
                                         emails.</p>
                                     
                                     <label for="email" class="field-lbl">Email address*</label>
-                                    <input type="text" class="email" type="email">
+                                    <input type="text" class="email form-field" id="email">
                                     <small class="sm-email"></small>
 
                                     <label for="confirm-email" class="field-lbl">Confirm email address*</label>
-                                    <input type="text" class="confirm-email" type="confirm-email">
+                                    <input type="text" class="confirm-email form-field" id="confirm-email">
                                     <small class="sm-confirm-email"></small>
                                 </div>
 
                                 <div class="phone-wrapper">
-                                    <h4>Telephone number*</h4>
+                                    <h4>Telephone number</h4>
                                     <p>Add a contact telephone number</p>
-                                    <label for="phone" class="field-lbl">Telephone number</label>
-                                    <input type="text" class="phone" type="phone">
+                                    <label for="phone" class="field-lbl">Telephone number*</label>
+                                    <input type="text" class="phone form-field" id="phone">
                                     <small class="sm-phone"></small>
                                 </div>
 
                                 <div class="password-wrapper">
-                                    <h4>Password*</h4>
-                                    <p>You need to create a 6-digit number to set up secure online access to
-                                         your London Road User Charging account. This number will also help 
-                                         identify you if you contact us by phone.</p>
-                                    <label for="password" class="field-lbl">Password</label>
-                                    <input type="text" class="password" type="password">
+                                    <h4>Password</h4>
+                                    <p>Your password must have between 8 to 15 characters and contain at 
+                                        least one lowercase letter, one uppercase letter, one numeric digit, 
+                                        and one special character</p>
+                                    <label for="password" class="field-lbl">Password*</label>
+                                    <input type="password" class="password form-field" id="password">
                                     <small class="sm-password"></small>
 
-                                    <label for="confirm-password" class="field-lbl">Confirm password</label>
-                                    <input type="text" class="confirm-password" type="confirm-password">
+                                    <label for="confirm-password" class="field-lbl">Confirm password*</label>
+                                    <input type="password" class="confirm-password form-field" id="confirm-password">
                                     <small class="sm-confirm-password"></small>
                                 </div>
                             </div>

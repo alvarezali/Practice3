@@ -819,7 +819,7 @@
     border-bottom: 1px dotted var(--more_bottom);
 }
 
-.person-title {
+.user-title {
     background: var(--select-menu);
 }
 

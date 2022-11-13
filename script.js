@@ -1,4 +1,6 @@
-//More button related elements
+//-----------------Elements-----------------
+
+//_More button related elements
 const moreBtn = document.getElementById('more-li');
 const moreLink = document.getElementById('more-a');
 const moreContainer = document.getElementById('more-container');
@@ -6,17 +8,22 @@ const moreUp = document.getElementById('more-up');
 const moreDown = document.getElementById('more-down');
 const box = document.getElementById('check-toggle');
 
-//Create account radio buttons
-const pAccount = document.getElementById('personal-account');
-const pAccountParent = pAccount.parentElement;
-const bAccount = document.getElementById('business-account');
-const bAccountParent = bAccount.parentElement;
+//_Account radio buttons and parent elements
+const paRadio = document.getElementById('personal-account');
+const paRadioParent = paRadio.parentElement;
+const baRadio = document.getElementById('business-account');
+const baRadioParent = baRadio.parentElement;
 const companyDiv = document.getElementById('company-container');
 
-//Question wrapper element
+//_Question wrapper element
 const question = document.getElementById('question-wrapper');
 const answer = document.getElementById('answer-wrapper');
 
+//_Input fields and related elements
+const inputNodeList = document.querySelectorAll('.form-field');
+const inputArr = [...inputNodeList];
+
+//More button and More section styling and functionality
 moreBtn.addEventListener('click', () => {
     moreBtn.classList.toggle('more-toggle');
     moreBtn.classList.toggle('more-li-hover');
@@ -27,24 +34,65 @@ moreBtn.addEventListener('click', () => {
     box.checked = !box.checked;
 });
 
+//-----------------Classes-----------------
 
-pAccount.addEventListener('click', () => {
-    if(pAccount.checked) {
-        pAccountParent.classList.add('account-border');
-        bAccountParent.classList.remove('account-border');
+class EmptyValidator {
+    constructor(arr){
+        this.arr = arr;
+    }
+
+    eValidation(){
+
+        let result =[];
+
+        if( !Array.isArray(this.arr) || this.arr.length === 0) {return result;}
+
+        if(paRadio.checked){ this.arr.shift();}
+
+        for(let i=0; i<this.arr.length; i++){
+
+            if(this.arr[i].value === ""){
+                result.push(0);
+            } else {
+                result.push(1);
+            }
+        }
+        return result;
+    }
+
+}
+
+let number = 3;
+let greeting = 'hello';
+let fakeArr = [];
+
+const eVal = new EmptyValidator(inputArr);
+
+console.log(eVal.eValidation());
+
+//-----------------Event listenners-----------------
+
+//Personal account radio button border styling and functionality
+paRadio.addEventListener('click', () => {
+    if(paRadio.checked) {
+        paRadioParent.classList.add('account-border');
+        baRadioParent.classList.remove('account-border');
         companyDiv.classList.remove('company-container-toggle');
     }
 });
 
-bAccount.addEventListener('click', () => {
-    if(bAccount.checked) {
-        bAccountParent.classList.add('account-border');
-        pAccountParent.classList.remove('account-border');
+//Business account radion button border styling and functionality
+baRadio.addEventListener('click', () => {
+    if(baRadio.checked) {
+        baRadioParent.classList.add('account-border');
+        paRadioParent.classList.remove('account-border');
         companyDiv.classList.add('company-container-toggle');
     }
 });
 
+//Question box functionality
 question.addEventListener('click', () => {
     answer.classList.toggle('answer-wrapper-toggle');
 });
+
 
