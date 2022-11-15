@@ -26,6 +26,13 @@
 --navigation: rgba(238, 238, 238, 1);
 --navigation_home: rgba(26, 90, 146, 1); 
 --select-menu: rgba(233, 233, 237);
+--continue-btn: rgba(22, 75, 121, 1);
+--continue-btn_95: rgba(22, 75, 121, .95);
+--continue-btn_90: rgba(22, 75, 121, .9);
+--continue-btn_85: rgba(22, 75, 121, .85);
+--continue-btn_80: rgba(22, 75, 121, .8);
+--continue-btn_50: rgba(22, 75, 121, .5);
+--continue-btn_5darker: rgba(18, 62, 99, 1);
 --black: rgba(0, 0, 0, 1);
 --white: rgba(255, 255, 255, 1);
 --white_75: rgba(255, 255, 255, .75);
@@ -420,15 +427,11 @@
 /*===========================
     Create account section
 ===========================*/
-.create-container {
-    border: 1px solid black;
-}
 
 .create-top-wrapper {
     width: auto;
     height: auto;
     margin: .75rem 5% .75rem 5%;
-    border: 1px solid black;
 }
 
 /*========== Breadcrumbs ==========*/
@@ -728,7 +731,6 @@
     width: 100%;
     height: auto;
     margin: 2rem 0 0 0;
-    border: 1px solid var(--more_bottom);
     
 }
 
@@ -739,7 +741,7 @@
     line-height: 3.5rem;
     padding: 0 .5rem;
     cursor: pointer;
-    border-bottom: 1px solid var(--more_bottom);
+    border: 1px solid var(--more_bottom);
 }
 
 .question-wrapper::after {
@@ -766,6 +768,8 @@
     height: auto;
     padding: .75rem .5rem .75rem .5rem;
     background: var(--more);
+    border-right: 1px solid var(--more_bottom);
+    border-left: 1px solid var(--more_bottom);
     border-bottom: 1px solid var(--more_bottom);
 }
 
@@ -808,15 +812,25 @@
 .fields-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 0;
     border-bottom: 1px dotted var(--more_bottom);
 }
 
-.name-wrapper, .email-wrapper, .phone-wrapper, .password-wrapper {
+.name-wrapper, .email-wrapper, .phone-wrapper {
     display: flex;
     flex-direction: column;
     padding: 0 0 2rem 0;
     border-bottom: 1px dotted var(--more_bottom);
+}
+
+.password-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 2rem 0
+}
+
+.required-wrapper {
+    padding: 0 0 1rem 0;
+    border-bottom: 1px solid var(--more_bottom);
 }
 
 .user-title {
@@ -827,8 +841,31 @@
     padding: 1.75rem 0 0 0;
 }
 
+.form-btn-wrapper {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.form-btn-wrapper a {
+    font-size: .98rem;
+}
 
+.continue-btn {
+    width: 45%;
+    height: 2.5rem;
+    font-size: .98rem;
+    font-weight: 300;
+    border-radius: .25rem;
+    padding: .25rem;
+    color: var(--white);
+    background: linear-gradient(var(--continue-btn_95), var(--continue-btn));
+}
+
+.continue-btn:hover {
+    background: var(--continue-btn_5darker);
+}
 
 /*===========================
             @Media

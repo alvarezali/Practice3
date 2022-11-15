@@ -47,8 +47,6 @@ class EmptyValidator {
 
         if( !Array.isArray(this.arr) || this.arr.length === 0) {return result;}
 
-        if(paRadio.checked){ this.arr.shift();}
-
         for(let i=0; i<this.arr.length; i++){
 
             if(this.arr[i].value === ""){
