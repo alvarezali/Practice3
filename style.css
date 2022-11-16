@@ -867,6 +867,10 @@
     background: var(--continue-btn_5darker);
 }
 
+.continue-btn:focus, .continue-btn:active {
+    background: var(--black);
+}
+
 /*===========================
             @Media
 ===========================*/
