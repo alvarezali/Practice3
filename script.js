@@ -90,13 +90,21 @@ let number = 3;
 let greeting = 'hello';
 let fakeArr = [];
 
-//_Input fields
+//_Continue button and Input fields
+const continueBtn = document.getElementById('continue-btn');
 const inputNodeList = document.querySelectorAll('.form-field');
 const inputArr = [...inputNodeList];
 
 const eVal = new EmptyValidator(inputArr);
 
-console.log(eVal.eValidation());
+continueBtn.addEventListener('click', (e) => {
+
+    e.preventDefault();
+    console.log(eVal.eValidation());
+
+});
+
+
 
 
 

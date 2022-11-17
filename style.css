@@ -299,10 +299,10 @@
     width: 25rem;
     height: auto;
     margin: 0;
-    padding: 0 .5rem 0 1.5rem;
+    padding: 0 .5rem 0.5rem 1.5rem;
     display: flex;
     justify-content: flex-start;
-    align-items: center; 
+    align-items: flex-end; 
 }
 
 .nav-search-input{
@@ -848,7 +848,16 @@
     align-items: center;
 }
 
+.form-btn-wrapper span {
+    display: inline-block;
+    font-size: .98rem;
+    padding: 0 .5rem;
+    transform: scale(1, 1.5);
+    color: var(--more_link);
+}
+
 .form-btn-wrapper a {
+    display: inline-block;
     font-size: .98rem;
 }
 
@@ -870,6 +879,7 @@
 .continue-btn:focus, .continue-btn:active {
     background: var(--black);
 }
+
 
 /*===========================
             @Media
