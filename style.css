@@ -815,6 +815,10 @@
     border-bottom: 1px dotted var(--more_bottom);
 }
 
+small {
+    color: red;
+}
+
 .name-wrapper, .email-wrapper, .phone-wrapper {
     display: flex;
     flex-direction: column;

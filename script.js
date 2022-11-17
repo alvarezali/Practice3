@@ -1,3 +1,5 @@
+import { EmptyValidator } from "/classes.js";
+
 //-----------------More button-----------------
 
 //_More button related elements
@@ -28,23 +30,21 @@ const paRadioParent = paRadio.parentElement;
 const baRadio = document.getElementById('business-account');
 const baRadioParent = baRadio.parentElement;
 const companyDiv = document.getElementById('company-container');
+const companyName = document.getElementById('company-name');
 
 //Personal account radio button border styling and functionality
 paRadio.addEventListener('click', () => {
-    if(paRadio.checked) {
-        paRadioParent.classList.add('account-border');
-        baRadioParent.classList.remove('account-border');
-        companyDiv.classList.remove('company-container-toggle');
-    }
+    paRadioParent.classList.add('account-border');
+    baRadioParent.classList.remove('account-border');
+    companyDiv.classList.remove('company-container-toggle');
+    companyName.value = "";
 });
 
 //Business account radion button border styling and functionality
 baRadio.addEventListener('click', () => {
-    if(baRadio.checked) {
-        baRadioParent.classList.add('account-border');
-        paRadioParent.classList.remove('account-border');
-        companyDiv.classList.add('company-container-toggle');
-    }
+    baRadioParent.classList.add('account-border');
+    paRadioParent.classList.remove('account-border');
+    companyDiv.classList.add('company-container-toggle');
 });
 
 
@@ -60,31 +60,6 @@ question.addEventListener('click', () => {
 });
 
 
-//-----------------Classes-----------------
-
-class EmptyValidator {
-    constructor(arr){
-        this.arr = arr;
-    }
-
-    eValidation(){
-
-        let result =[];
-
-        if( !Array.isArray(this.arr) || this.arr.length === 0) {return result;}
-
-        for(let i=0; i<this.arr.length; i++){
-
-            if(this.arr[i].value === ""){
-                result.push(0);
-            } else {
-                result.push(1);
-            }
-        }
-        return result;
-    }
-}
-
 //These variables are used for testing purposes
 let number = 3;
 let greeting = 'hello';
@@ -95,11 +70,13 @@ const continueBtn = document.getElementById('continue-btn');
 const inputNodeList = document.querySelectorAll('.form-field');
 const inputArr = [...inputNodeList];
 
+//-----------------Class EmptyValidator-----------------
 const eVal = new EmptyValidator(inputArr);
 
 continueBtn.addEventListener('click', (e) => {
 
     e.preventDefault();
+    
     console.log(eVal.eValidation());
 
 });
