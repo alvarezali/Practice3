@@ -1,4 +1,4 @@
-import { EmptyValidator } from "/classes.js";
+import { EmptyValidator, PasswordValidator} from "/classes.js";
 
 //-----------------More button-----------------
 
@@ -49,6 +49,10 @@ baRadio.addEventListener('click', () => {
     companyDiv.classList.add('company-container-toggle');
 });
 
+//-----------------Password fields-----------------
+
+const p1 = document.getElementById('password');
+const p2 = document.getElementById('confirm-password');
 
 //-----------------Question box-----------------
 
@@ -73,14 +77,21 @@ const continueBtn = document.getElementById('continue-btn');
 const inputNodeList = document.querySelectorAll('.form-field');
 const inputArr = [...inputNodeList];
 
-//-----------------Class EmptyValidator-----------------
+//-----------------Classes-----------------
 const eVal = new EmptyValidator(inputArr, baRadio);
+const pVal = new PasswordValidator(p1, p2);
 
 continueBtn.addEventListener('click', (e) => {
 
     e.preventDefault();
+
+    let eVResult = eVal.eValidation();
+    let pVResult1 = pVal.checkPasswordStrength();
+    let pVResult2 = pVal.comparePasswords();
     
-    console.log(eVal.eValidation());
+    console.log('emptyCheck', eVResult);
+    console.log('passwordStrength', pVResult1);
+    console.log('passwordComparison', pVResult2);
 
 });
 
