@@ -820,6 +820,8 @@
 }
 
 small {
+    display: inline-block;
+    height: 1.75rem;
     color: red;
 }
 

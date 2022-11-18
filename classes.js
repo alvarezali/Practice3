@@ -1,23 +1,27 @@
 class EmptyValidator {
-    constructor(arr){
+    constructor(arr, radioBtn){
         this.arr = arr;
+        this.radioBtn = radioBtn;
+
+        if(!Array.isArray(this.arr) || this.arr.length === 0) {
+            throw new Error('This array is not valid');
+        }
+
+        if(this.radioBtn.type !== 'radio') {
+            throw new Error('This radio button is not valid');
+        }
     }
 
     eValidation(){
         
-        let smName = 'sm-';
-        let smElement = null;
         let result =  true;
-        const baRadio = document.getElementById('business-account');
-
-        if(!Array.isArray(this.arr) || this.arr.length === 0) {
-            result = false;
-            return result;
-        }
 
         let i = 1;
 
-        if(baRadio.checked) {i = 0;}
+        if(this.radioBtn.checked) {i = 0;}
+
+        let smName = 'sm-';
+        let smElement = null;
 
         for(i; i<this.arr.length; i++){
 

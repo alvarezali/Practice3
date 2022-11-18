@@ -31,13 +31,15 @@ const baRadio = document.getElementById('business-account');
 const baRadioParent = baRadio.parentElement;
 const companyDiv = document.getElementById('company-container');
 const companyName = document.getElementById('company-name');
+const smMessage = document.getElementById('sm-company-name');
 
 //Personal account radio button border styling and functionality
 paRadio.addEventListener('click', () => {
     paRadioParent.classList.add('account-border');
     baRadioParent.classList.remove('account-border');
     companyDiv.classList.remove('company-container-toggle');
-    companyName.value = "";
+    companyName.value = '';
+    smMessage.innerHTML = '';
 });
 
 //Business account radion button border styling and functionality
@@ -64,6 +66,7 @@ question.addEventListener('click', () => {
 let number = 3;
 let greeting = 'hello';
 let fakeArr = [];
+let fakeRadioBtn = '';
 
 //_Continue button and Input fields
 const continueBtn = document.getElementById('continue-btn');
@@ -71,7 +74,7 @@ const inputNodeList = document.querySelectorAll('.form-field');
 const inputArr = [...inputNodeList];
 
 //-----------------Class EmptyValidator-----------------
-const eVal = new EmptyValidator(inputArr);
+const eVal = new EmptyValidator(inputArr, baRadio);
 
 continueBtn.addEventListener('click', (e) => {
 
