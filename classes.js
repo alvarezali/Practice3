@@ -44,53 +44,55 @@ class EmptyValidator {
 }
 
 class PasswordValidator {
-    constructor(input1, input2) {
-        this.input1 = input1;
-        this.input2 = input2;
+    constructor(p1, p2) {
+        this.p1 = p1;
+        this.p2 = p2;
 
-        if(this.input1.type !== 'password') {
-            throw new Error ('Input1 is not of type password');
+        if(this.p1.type !== 'password') {
+            throw new Error ('First input element is not of type password');
         }
 
-        if(this.input2.type !== 'password') {
-            throw new Error ('Input2 is not of type password');
+        if(this.p2.type !== 'password') {
+            throw new Error ('Second input element  is not of type password');
         }
 
     }
 
     checkPasswordStrength() {
 
-        if(this.input1.value !== '') {
+        if(this.p1.value !== '') {
 
-            const smPass1 = document.getElementById(`sm-${this.input1.id}`);
+            const smP1 = document.getElementById(`sm-${this.p1.id}`);
 
             /*password must have between 8 to 15 characters and contain at least one lowercase letter, 
             one uppercase letter, one numeric digit, and one special character*/
             let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
 
-            let strength = this.input1.value.match(regex);
+            let strength = this.p1.value.match(regex);
             
             if(strength === null) {
-                smPass1.innerHTML = 'Your password is not valid. Please, check!'; 
+                smP1.innerHTML = 'Your password is not valid. Please, check!'; 
                 return false;
             } else {
                 return true;
             }
-        } 
+        } else {
+            return false;
+        }
 
     }
 
     comparePasswords() {
         
-        if(this.input1.value !== '' && this.input2.value !== '') {
-            const smPass1 = document.getElementById(`sm-${this.input1.id}`);
-            const smPass2 = document.getElementById(`sm-${this.input2.id}`);
+        if(this.p1.value !== '' && this.p2.value !== '') {
+            const smP1 = document.getElementById(`sm-${this.p1.id}`);
+            const smP2 = document.getElementById(`sm-${this.p2.id}`);
 
-            if(this.input1.value === this.input2.value) {
+            if(this.p1.value === this.p2.value) {
                 return true;
             } else {
-                smPass1.innerHTML = 'Your passwords are not identical';
-                smPass2.innerHTML = 'Your passwords are not identical';
+                smP1.innerHTML = 'Your passwords are not identical';
+                smP2.innerHTML = 'Your passwords are not identical';
                 return false;
             }
         } else {
@@ -99,4 +101,32 @@ class PasswordValidator {
     }
 }
 
-export {EmptyValidator, PasswordValidator};
+
+class EmailValidator {
+    constructor(e1, e2) {
+        this.e1 = e1;
+        this.e2 = e2;
+    }
+
+    compareEmails() {
+        if(this.e1.value !== '' && this.e2.value !== '') {
+            const smE1 = document.getElementById(`sm-${this.e1.id}`);
+            const smE2 = document.getElementById(`sm-${this.e2.id}`);
+            
+            if(this.e1.value === this.e2.value) {
+                return true;
+            } else {
+                smE1.innerHTML = 'Your emails are not identical'; 
+                smE2.innerHTML = 'Your emails are not identical'; 
+                return false;
+            }
+
+        } else {
+            return false;
+        }
+    }
+}
+
+
+
+export {EmptyValidator, PasswordValidator, EmailValidator};

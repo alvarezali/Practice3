@@ -33,7 +33,12 @@
 --continue-btn_80: rgba(22, 75, 121, .8);
 --continue-btn_50: rgba(22, 75, 121, .5);
 --continue-btn_5darker: rgba(18, 62, 99, 1);
+--check-circle: rgba(75, 181, 67, 1);
 --black: rgba(0, 0, 0, 1);
+--gray: rgba(100, 100, 100, 1);
+--gray_75: rgba(100, 100, 100, .75);
+--gray_50: rgba(100, 100, 100, .5);
+--gray_25: rgba(100, 100, 100, .25);
 --white: rgba(255, 255, 255, 1);
 --white_75: rgba(255, 255, 255, .75);
 --white_50: rgba(255, 255, 255, .5);
@@ -458,7 +463,7 @@
     z-index: 10;
 }
 
-[class^="fa-house"]:before, [class*=" fa-house"]:before {
+[class*="fa-house"]:before {
     color: var(--navigation_home);
 }
 
@@ -846,6 +851,29 @@ small {
 .user-title {
     background: var(--select-menu);
 }
+
+/*match this width with input elements' witdh*/
+.email-icon-wrapper {
+    position: relative;
+    display: inline;
+    width: 50%;
+}
+
+.email-icon, .check-icon {
+    position: absolute;
+    right: .5rem;
+    top: -1.30rem;
+}
+
+
+[class*="fa-envelope"]:before {
+    color: var(--gray_75);
+}
+
+[class*="fa-circle-check"]:before {
+    color: var(--check-circle);
+}
+
 
 .field-lbl {
     padding: 1.75rem 0 0 0;

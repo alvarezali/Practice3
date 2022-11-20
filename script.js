@@ -1,4 +1,4 @@
-import { EmptyValidator, PasswordValidator} from "/classes.js";
+import { EmptyValidator, PasswordValidator, EmailValidator} from "/classes.js";
 
 //-----------------More button-----------------
 
@@ -20,7 +20,6 @@ moreBtn.addEventListener('click', () => {
     moreDown.classList.toggle('more-down-toggle');
     box.checked = !box.checked;
 });
-
 
 //-----------------Account radio buttons-----------------
 
@@ -48,6 +47,29 @@ baRadio.addEventListener('click', () => {
     paRadioParent.classList.remove('account-border');
     companyDiv.classList.add('company-container-toggle');
 });
+
+//-----------------Email fields-----------------
+const e1 = document.getElementById('email');
+const e2 = document.getElementById('confirm-email');
+const eIcon = document.getElementById('email-icon');
+
+e1.addEventListener('input', () => {
+    let regex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(e1.value === '') {
+        eIcon.classList.replace("fa-circle-check", "fa-envelope");
+        return
+    }
+
+    if(e1.value.match(regex)) {
+        eIcon.classList.replace("fa-envelope", "fa-circle-check");
+
+    } else {
+        eIcon.classList.replace("fa-circle-check", "fa-envelope");
+    }
+});
+
+console.log(e1, eIcon);
 
 //-----------------Password fields-----------------
 
@@ -80,16 +102,19 @@ const inputArr = [...inputNodeList];
 //-----------------Classes-----------------
 const eVal = new EmptyValidator(inputArr, baRadio);
 const pVal = new PasswordValidator(p1, p2);
+const emVal = new EmailValidator(e1, e2);
 
 continueBtn.addEventListener('click', (e) => {
 
     e.preventDefault();
 
     let eVResult = eVal.eValidation();
+    let emVResult1 = emVal.compareEmails();
     let pVResult1 = pVal.checkPasswordStrength();
     let pVResult2 = pVal.comparePasswords();
     
     console.log('emptyCheck', eVResult);
+    console.log('emailComparison', emVResult1);
     console.log('passwordStrength', pVResult1);
     console.log('passwordComparison', pVResult2);
 
