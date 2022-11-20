@@ -60,6 +60,7 @@
 ===========================*/
 
 .full-container{
+    margin: 0;
     padding: 0;
     height: auto;
     background: var(--dark-nav);
@@ -67,6 +68,7 @@
 
 .navtop-wrapper {
     width: 100%;
+    padding: 0;
     height: auto;
 }
 
@@ -195,6 +197,7 @@
     height: 100%;
     font-size: .9rem;
     letter-spacing: .025rem;
+    text-decoration: none;
 }
 
 .nav-a:visited {
@@ -257,6 +260,7 @@
 
 .more-a {
     position: relative;
+    text-decoration: none;
 }
 
 .more-a-toggle {
@@ -381,6 +385,7 @@
 .travel-a, .ways-a, .links-a {
     font-size: .95rem;
     color: var(--more_link);
+    text-decoration: none;
 }
 
 /*========== More dropdown buttons ==========*/
@@ -570,7 +575,7 @@
 
 /*========== Create account ==========*/
 
-:is(h1, h2, h4, p, input, label, li, strong, select) {
+:is(h1, h2, h4, p, input, label, li, strong) {
     color: var(--black);
 }
 
@@ -849,6 +854,7 @@ small {
 }
 
 .user-title {
+    color: var(--gray_75);
     background: var(--select-menu);
 }
 

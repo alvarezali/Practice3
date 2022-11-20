@@ -1,3 +1,4 @@
+//-------------Check for empty fields-------------//
 class EmptyValidator {
     constructor(arr, radioBtn){
         this.arr = arr;
@@ -43,6 +44,7 @@ class EmptyValidator {
     }
 }
 
+//-------------Check and compare passwords-------------//
 class PasswordValidator {
     constructor(p1, p2) {
         this.p1 = p1;
@@ -63,6 +65,7 @@ class PasswordValidator {
         if(this.p1.value !== '') {
 
             const smP1 = document.getElementById(`sm-${this.p1.id}`);
+            const smP2 = document.getElementById(`sm-${this.p2.id}`);
 
             /*password must have between 8 to 15 characters and contain at least one lowercase letter, 
             one uppercase letter, one numeric digit, and one special character*/
@@ -72,6 +75,7 @@ class PasswordValidator {
             
             if(strength === null) {
                 smP1.innerHTML = 'Your password is not valid. Please, check!'; 
+                smP2.innerHTML = '';
                 return false;
             } else {
                 return true;
@@ -101,11 +105,41 @@ class PasswordValidator {
     }
 }
 
-
+//-------------Check and compare emails-------------//
 class EmailValidator {
     constructor(e1, e2) {
         this.e1 = e1;
         this.e2 = e2;
+
+        if(this.e1.type !== 'email') {
+            throw new Error ('First input element is not of type email');
+        }
+
+        if(this.e2.type !== 'email') {
+            throw new Error ('Second input element  is not of type email');
+        }
+    }
+
+    checkEmail(){
+        if(this.e1.value !== ''){
+            const smE1 = document.getElementById(`sm-${this.e1.id}`);
+            const smE2 = document.getElementById(`sm-${this.e2.id}`);
+
+            let regex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            let val = this.e1.value.match(regex);
+
+            if(val === null) {
+                smE1.innerHTML = 'Your email is not valid. Please, check!'; 
+                smE2.innerHTML = ''
+                return false;
+            } else {
+                return true;
+            }
+
+        } else {
+            return false;
+        }
     }
 
     compareEmails() {
@@ -126,7 +160,5 @@ class EmailValidator {
         }
     }
 }
-
-
 
 export {EmptyValidator, PasswordValidator, EmailValidator};

@@ -48,6 +48,19 @@ baRadio.addEventListener('click', () => {
     companyDiv.classList.add('company-container-toggle');
 });
 
+//-----------------Select field-----------------
+const selectField = document.getElementById('user-title');
+
+selectField.addEventListener( 'input', () => {
+
+    if(selectField.value === '') {
+        selectField.style.color = 'var(--gray_75)';
+
+    } else {
+        selectField.style.color = 'black';
+    }
+});
+
 //-----------------Email fields-----------------
 const e1 = document.getElementById('email');
 const e2 = document.getElementById('confirm-email');
@@ -68,8 +81,6 @@ e1.addEventListener('input', () => {
         eIcon.classList.replace("fa-circle-check", "fa-envelope");
     }
 });
-
-console.log(e1, eIcon);
 
 //-----------------Password fields-----------------
 
@@ -109,14 +120,19 @@ continueBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
     let eVResult = eVal.eValidation();
-    let emVResult1 = emVal.compareEmails();
-    let pVResult1 = pVal.checkPasswordStrength();
+    let emVResult2 = emVal.compareEmails();
+    let emVResult1 = emVal.checkEmail();
     let pVResult2 = pVal.comparePasswords();
-    
-    console.log('emptyCheck', eVResult);
-    console.log('emailComparison', emVResult1);
-    console.log('passwordStrength', pVResult1);
-    console.log('passwordComparison', pVResult2);
+    let pVResult1 = pVal.checkPasswordStrength();
+
+    let validation = eVResult && emVResult1 && emVResult2 && pVResult1 && pVResult2;
+
+    console.log('validation',validation);
+
+    if(validation) {
+        alert('Submitting form');
+        /*console.log('good to go');*/
+    }
 
 });
 
