@@ -1,4 +1,4 @@
-*, *::before, *::after, a {
+*, *::before, *::after, a:link {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -25,7 +25,8 @@
 --blue_cadet: rgba(95, 158, 160,1);
 --navigation: rgba(238, 238, 238, 1);
 --navigation_home: rgba(26, 90, 146, 1); 
---select-menu: rgba(233, 233, 237);
+--select-menu: rgba(233, 233, 237, 1);
+--create-bottom: rgba(42, 45, 53, 1);
 --continue-btn: rgba(22, 75, 121, 1);
 --continue-btn_95: rgba(22, 75, 121, .95);
 --continue-btn_90: rgba(22, 75, 121, .9);
@@ -34,6 +35,10 @@
 --continue-btn_50: rgba(22, 75, 121, .5);
 --continue-btn_5darker: rgba(18, 62, 99, 1);
 --check-circle: rgba(75, 181, 67, 1);
+--pri-foot: rgba(31, 35, 41, 1);
+--sec-foot: rgba(44, 47, 56, 1);
+--pri-foot-a: rgba(203, 203, 203, 1);
+--sec-foot-a: rgba(102, 204, 204);
 --black: rgba(0, 0, 0, 1);
 --gray: rgba(100, 100, 100, 1);
 --gray_75: rgba(100, 100, 100, .75);
@@ -438,10 +443,15 @@
     Create account section
 ===========================*/
 
+.create-container {
+    border-bottom: 3px solid var(--create_bottom);
+}
+
 .create-top-wrapper {
     width: auto;
     height: auto;
-    margin: .75rem 5% .75rem 5%;
+    padding: .75rem 5% .75rem 5%;
+    border-bottom: 3px solid var(--more_bottom);
 }
 
 /*========== Breadcrumbs ==========*/
@@ -924,6 +934,70 @@ small {
     background: var(--black);
 }
 
+/*===========================
+Primary and Secondary footer
+===========================*/
+
+.primary-footer {
+    background: var(--pri-foot);
+}
+
+.primary-footer-wrapper {
+    padding: 1rem 2rem;
+
+}
+
+.pri-nav-li {
+    padding: .45rem 0;
+}
+
+.pri-foot-a {
+    font-size: .85rem;
+    font-weight: 300;
+    color: var(--pri-foot-a);
+}
+
+.pri-foot-a:hover {
+    color: var(--pri-foot-a);
+    text-decoration: underline;
+}
+
+/*========== Secondary footer ==========*/
+
+.secondary-footer {
+    background: var(--sec-foot);
+}
+
+.secondary-footer-wrapper {
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem 0 2rem;
+}
+
+.notice-ul {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 0 0 0 1.5rem;
+}
+
+.notice-li {
+    padding: 0 .5rem;
+}
+
+.copyright {
+    font-size: .90rem;
+    font-weight: 300;
+    text-align: right;
+    padding: 0 2rem 0 0;
+    color: var(--white_75);
+}
+
+.sec-foot-a {
+    font-size: .85rem;
+    font-weight: 300;
+    color: var(--sec-foot-a);
+}
 
 /*===========================
             @Media
