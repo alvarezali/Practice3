@@ -943,12 +943,15 @@ Primary and Secondary footer
 }
 
 .primary-footer-wrapper {
-    padding: 1rem 2rem;
+    padding: 2rem 2rem 1rem 2rem;
+}
 
+.pri-left-col {
+    border-right: 1px solid white;
 }
 
 .pri-nav-li {
-    padding: .45rem 0;
+    padding: .9rem 0 0 0;
 }
 
 .pri-foot-a {
@@ -960,6 +963,60 @@ Primary and Secondary footer
 .pri-foot-a:hover {
     color: var(--pri-foot-a);
     text-decoration: underline;
+}
+
+.mol-container {
+    padding: 0 3rem 0 0;
+    text-align: right;
+}
+
+.mol-btn {
+    width: 18rem;
+    height: 3rem;
+    background: transparent;
+    border: 1px solid var(--white);
+}
+
+.uil {
+    font-size: 1.5rem;
+    font-weight: 100;
+    border: 1px solid red;
+}
+
+.mol-ul {
+    border: 1px solid var(--gray_50);
+}
+
+.mol-li {
+    padding: .5rem 0 0 0;
+}
+
+.mol-a {
+    font-size: .85rem;
+    font-weight: 300;
+    color: var(--pri-foot-a);
+}
+
+.mol-a:hover {
+    color: var(--pri-foot-a);
+}
+
+/*========== Google translate ==========*/
+
+.google-translate {
+    padding: 0 0 0 2rem;
+}
+
+.goog-te-gadget {
+    margin: 0;
+    padding: 0;
+}
+
+.goog-te-combo {
+    margin: 0;
+    padding: 0;
+    border-radius: .5rem;
+    color: var(--black);
 }
 
 /*========== Secondary footer ==========*/

@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script type="text/javascript" src= "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <title>Client-side form validation</title>
 </head>
 <body>
@@ -282,7 +293,7 @@
     <div class="container-fluid p-0 primary-footer">
         <div class="primary-footer-wrapper">
             <div class="row">
-                <div class="col-4">
+                <div class="col-4 pri-left-col">
                     <ul class="foot-nav-ul">
                         <li class="pri-nav-li"><a href="#" class="pri-foot-a">Help & contacts</a></li>
                         <li class="pri-nav-li"><a href="#" class="pri-foot-a">Careers</a></li>
@@ -293,8 +304,11 @@
                         <li class="pri-nav-li"><a href="#" class="pri-foot-a">Social media & email updates</a></li>
                         <li class="pri-nav-li"><a href="#" class="pri-foot-a">Gift Shop</a></li>
                     </ul>
+
+                    <div class="google-translate" id="google_translate_element"></div>
+
                 </div>
-                <div class="col-8">
+                <div class="col-8 pri-right-col">
                     <p class="info-title">Information for...</p>
                     <div class="row">
                         <div class="col-6">
@@ -304,8 +318,7 @@
                                 <li class="pri-nav-li"><a href="#" class="pri-foot-a">Deliveries in London</a></li>
                                 <li class="pri-nav-li"><a href="#" class="pri-foot-a">Taxi & private hire</a></li>
                                 <li class="pri-nav-li"><a href="#" class="pri-foot-a">Bus operators</a></li>
-                                <li class="pri-nav-li"><a href="#" class="pri-foot-a">Coach drivers</a></li>
-                                
+                                <li class="pri-nav-li"><a href="#" class="pri-foot-a">Coach drivers</a></li> 
                             </ul>
                         </div>
                         <div class="col-6">
@@ -319,13 +332,29 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="mol-container">
 
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4"></div>
-                <div class="col-4"></div>
+                        <button class="mol-btn">
+                            MAYOR OF LONDON | GLA
+                            <span class="mol-arrow-container">
+                                <i class="uil uil-angle-up"></i>
+                                <i class="uil uil-angle-down"></i>
+                            </span>
+                        </button>
+
+                        <ul class="mol-ul">
+                            <li class="mol-li">GREATER<strong>LONDON</strong>AUTHORITY</li>
+                            <li class="mol-li"><a href="" class="mol-a">Mayor of London</a></li>
+                            <li class="mol-li"><a href="" class="mol-a">London Assembly</a></li>
+                            <li class="mol-li"><a href="" class="mol-a">London and Partners</a></li>
+                            <li class="mol-li"><a href="" class="mol-a">Metropolitan Police Service</a></li>
+                            <li class="mol-li"><a href="" class="mol-a">London Fire and Emergency Planning</a></li>
+                            <li class="mol-li"><a href="" class="mol-a">The Mayors Office of Policing and Crime</a></li>
+                            <li class="mol-li"><a href="" class="mol-a">London Legacy Development Corporation</a></li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
