@@ -110,6 +110,22 @@ const continueBtn = document.getElementById('continue-btn');
 const inputNodeList = document.querySelectorAll('.form-field');
 const inputArr = [...inputNodeList];
 
+//_MOL button and related elements
+const molBtn = document.getElementById('mol-btn');
+const molUl = document.getElementById('mol-ul');
+const faUp = document.getElementById('fa-up');
+const faDown = document.getElementById('fa-down');
+
+console.log(molBtn);
+
+molBtn.addEventListener('click', () => {
+    molUl.classList.toggle('mol-ul-toggle');
+    faUp.classList.toggle('fa-up-toggle');
+    faDown.classList.toggle('fa-down-toggle');
+
+});
+
+
 //-----------------Classes-----------------
 const eVal = new EmptyValidator(inputArr, baRadio);
 const pVal = new PasswordValidator(p1, p2);

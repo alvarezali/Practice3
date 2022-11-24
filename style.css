@@ -35,7 +35,10 @@
 --continue-btn_50: rgba(22, 75, 121, .5);
 --continue-btn_5darker: rgba(18, 62, 99, 1);
 --check-circle: rgba(75, 181, 67, 1);
---pri-foot: rgba(31, 35, 41, 1);
+--pri-foot_light: rgba(54, 60, 71, 1);    
+--pri-foot_dark: rgba(31, 35, 41, 1);
+--pri-foot_dark5: rgba(42, 47, 56, 1);
+--pri-foot_dark10: rgba(53, 60, 70, 1);
 --sec-foot: rgba(44, 47, 56, 1);
 --pri-foot-a: rgba(203, 203, 203, 1);
 --sec-foot-a: rgba(102, 204, 204);
@@ -444,7 +447,7 @@
 ===========================*/
 
 .create-container {
-    border-bottom: 3px solid var(--create_bottom);
+    border-bottom: 5px solid var(--create-bottom);
 }
 
 .create-top-wrapper {
@@ -939,7 +942,7 @@ Primary and Secondary footer
 ===========================*/
 
 .primary-footer {
-    background: var(--pri-foot);
+    background: linear-gradient(var(--create-bottom), 1%, var(--pri-foot_dark10) 10%, var(--pri-foot_dark));
 }
 
 .primary-footer-wrapper {
@@ -947,11 +950,22 @@ Primary and Secondary footer
 }
 
 .pri-left-col {
-    border-right: 1px solid white;
+    border-right: 1px solid var(--pri-foot-a);
 }
 
 .pri-nav-li {
-    padding: .9rem 0 0 0;
+    padding: 0 0 .9rem 0;
+}
+
+.foot-nav-ul .pri-nav-li:nth-child(8) {
+ padding: 0;
+}
+
+.info-title {
+    padding: 0 2rem;
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--white);
 }
 
 .pri-foot-a {
@@ -966,30 +980,88 @@ Primary and Secondary footer
 }
 
 .mol-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
     padding: 0 3rem 0 0;
-    text-align: right;
 }
 
 .mol-btn {
-    width: 18rem;
+    position: relative;
+    width: 19rem;
     height: 3rem;
-    background: transparent;
-    border: 1px solid var(--white);
+    font-size: 1.25rem;
+    font-weight: 900;
+    padding: 0 0 0 .85rem;
+    margin: 0 2rem 0 0;
+    text-align: left;
+    background: var(--pri-foot_dark);
+    border: 1px solid var(--pri-foot-a);
 }
 
-.uil {
-    font-size: 1.5rem;
-    font-weight: 100;
-    border: 1px solid red;
+.mol-btn span {
+    font-size: 1.15rem;
+    font-weight: 500;
+    padding: 0 .5rem;
+    margin: 0 0 0 .5rem;
+    border-left: 1px solid var(--gray_50);
+}
+/*------------------------------------------*/
+.fa-angle-up, .fa-angle-down {
+    position: absolute;
+    top: .85rem;
 }
 
+.fa-down {
+    display: none !important;
+}
+
+.fa-down-toggle {
+    display: inline-block !important ;
+}
+
+.fa-up-toggle {
+    display: none !important ;
+}
+
+/*------------------------------------------*/
 .mol-ul {
+    position: absolute;
+    display: none;
+    right: 2.75rem;
+    bottom: 3rem;
+    width: 19rem;
+    height: auto;
+    padding: 0 0 1rem 0;
+    margin: 0;
+    text-align: left;
+    background: linear-gradient(var(--pri-foot_dark), var(--pri-foot_dark5));
     border: 1px solid var(--gray_50);
 }
 
-.mol-li {
-    padding: .5rem 0 0 0;
+.mol-ul-toggle {
+    display: block;
 }
+
+.mol-li {
+    padding: 1rem 0 0 0.75rem;
+}
+
+.fa-arrow-up-right-from-square {
+    padding: 0 .5rem 0 0;
+}
+
+.mol-li-title, .mol-li-title strong {
+    color: var(--white);
+}
+
+.mol-li-title {
+    padding: .5rem 0.5rem .5rem;
+    border-bottom: 1px solid var(--gray_50);
+}
+
 
 .mol-a {
     font-size: .85rem;
@@ -999,24 +1071,6 @@ Primary and Secondary footer
 
 .mol-a:hover {
     color: var(--pri-foot-a);
-}
-
-/*========== Google translate ==========*/
-
-.google-translate {
-    padding: 0 0 0 2rem;
-}
-
-.goog-te-gadget {
-    margin: 0;
-    padding: 0;
-}
-
-.goog-te-combo {
-    margin: 0;
-    padding: 0;
-    border-radius: .5rem;
-    color: var(--black);
 }
 
 /*========== Secondary footer ==========*/
@@ -1144,6 +1198,14 @@ Primary and Secondary footer
     .status-li {
         display: none;
     }
+
+    .mol-container {
+        align-items: center;
+    }
+
+    .pri-left-col {
+        border-right: 1px solid transparent;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -1177,6 +1239,7 @@ Primary and Secondary footer
     .plan-li {
         display: none;
     }
+
 }
 
 @media screen and (max-width: 992px) {
