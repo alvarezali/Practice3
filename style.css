@@ -392,6 +392,7 @@
 
 .travel-a, .ways-a, .links-a {
     font-size: .95rem;
+    font-weight: 400;
     color: var(--more_link);
     text-decoration: none;
 }
@@ -434,6 +435,7 @@
 .more-a {
     position: relative;
     font-size: .95rem;
+    font-weight: 400;
     color: var(--more_link);
     z-index: 1;
 }
@@ -624,7 +626,6 @@
     width: 65.5%;
     display: flex;
     flex-direction: column;
-    border: 1px solid blue;
 }
 
 .create-title {
@@ -845,7 +846,6 @@
 small {
     display: inline-block;
     height: 1.75rem;
-    color: red;
 }
 
 .name-wrapper, .email-wrapper, .phone-wrapper {
@@ -1008,6 +1008,7 @@ Primary and Secondary footer
     margin: 0 0 0 .5rem;
     border-left: 1px solid var(--gray_50);
 }
+
 /*------------------------------------------*/
 .fa-angle-up, .fa-angle-down {
     position: absolute;
@@ -1096,17 +1097,27 @@ Primary and Secondary footer
     padding: 0 .5rem;
 }
 
+.copyright-col {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .copyright {
+    display: inline;
     font-size: .90rem;
     font-weight: 300;
     text-align: right;
-    padding: 0 2rem 0 0;
+    margin: 0 2rem 0 0;
     color: var(--white_75);
 }
 
 .sec-foot-a {
     font-size: .85rem;
     font-weight: 300;
+    color: var(--sec-foot-a);
+}
+
+.sec-foot-a:hover {
     color: var(--sec-foot-a);
 }
 
@@ -1146,6 +1157,10 @@ Primary and Secondary footer
 
     .fares-li {
         display: none;
+    }
+
+    .account-container {
+        width: 100%;
     }
 }
 
@@ -1200,7 +1215,16 @@ Primary and Secondary footer
     }
 
     .mol-container {
-        align-items: center;
+        align-items: flex-start;
+        margin: 0 0 0 2rem;
+    }
+
+    .mol-ul {
+        position: absolute;
+        left: .75rem;
+        bottom: 3rem;
+        padding: 0 0 1rem 0;
+        margin: 0;
     }
 
     .pri-left-col {
@@ -1240,6 +1264,26 @@ Primary and Secondary footer
         display: none;
     }
 
+    :is(input[type=text], input[type=password], input[type=email], select, .email-icon-wrapper) {
+        width: 100%;
+    }
+
+    .nav-logo-wrapper {
+        padding: 0 .5rem 0 .5rem;
+    }
+
+    .nav-logo-title {
+        display: none;
+    }
+
+    .nav-logo {
+        margin: .5rem 0.65rem .5rem .65rem;
+    }
+
+    .nav-ul {
+        justify-content: center;
+    }
+
 }
 
 @media screen and (max-width: 992px) {
@@ -1254,4 +1298,30 @@ Primary and Secondary footer
     .ways2-ul{
         border-left: 1px solid var(--more_bottom);
     }
+
+    .secondary-footer-wrapper {
+        width: 100%;
+        height: auto;
+        padding: 0 2rem 0 2rem;
+    }
+
+    .notice-ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .notice-li {
+        padding: 0.5rem .5rem;
+    }
+
+    .copyright-col {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .copyright {
+        margin: 0 2rem 0 2rem;
+    }
 }
+
+
