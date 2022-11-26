@@ -32,7 +32,7 @@ const companyDiv = document.getElementById('company-container');
 const companyName = document.getElementById('company-name');
 const smMessage = document.getElementById('sm-company-name');
 
-//Personal account radio button border styling and functionality
+//Personal account radio button: border styling and functionality
 paRadio.addEventListener('click', () => {
     paRadioParent.classList.add('account-border');
     baRadioParent.classList.remove('account-border');
@@ -41,14 +41,22 @@ paRadio.addEventListener('click', () => {
     smMessage.innerHTML = '';
 });
 
-//Business account radion button border styling and functionality
+//Business account radion button: border styling and functionality
 baRadio.addEventListener('click', () => {
     baRadioParent.classList.add('account-border');
     paRadioParent.classList.remove('account-border');
     companyDiv.classList.add('company-container-toggle');
 });
 
-//-----------------Select field-----------------
+//_Question wrapper element & Question box functionality
+const question = document.getElementById('question-wrapper');
+const answer = document.getElementById('answer-wrapper');
+
+question.addEventListener('click', () => {
+    answer.classList.toggle('answer-wrapper-toggle');
+});
+
+//_Title field and select element: color styling
 const selectField = document.getElementById('user-title');
 
 selectField.addEventListener( 'input', () => {
@@ -60,55 +68,6 @@ selectField.addEventListener( 'input', () => {
         selectField.style.color = 'black';
     }
 });
-
-//-----------------Email fields-----------------
-const e1 = document.getElementById('email');
-const e2 = document.getElementById('confirm-email');
-const eIcon = document.getElementById('email-icon');
-
-e1.addEventListener('input', () => {
-    let regex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-    if(e1.value === '') {
-        eIcon.classList.replace("fa-circle-check", "fa-envelope");
-        return
-    }
-
-    if(e1.value.match(regex)) {
-        eIcon.classList.replace("fa-envelope", "fa-circle-check");
-
-    } else {
-        eIcon.classList.replace("fa-circle-check", "fa-envelope");
-    }
-});
-
-//-----------------Password fields-----------------
-
-const p1 = document.getElementById('password');
-const p2 = document.getElementById('confirm-password');
-
-//-----------------Question box-----------------
-
-//_Question wrapper element
-const question = document.getElementById('question-wrapper');
-const answer = document.getElementById('answer-wrapper');
-
-//Question box functionality
-question.addEventListener('click', () => {
-    answer.classList.toggle('answer-wrapper-toggle');
-});
-
-
-//These variables are used for testing purposes
-let number = 3;
-let greeting = 'hello';
-let fakeArr = [];
-let fakeRadioBtn = '';
-
-//_Continue button and Input fields
-const continueBtn = document.getElementById('continue-btn');
-const inputNodeList = document.querySelectorAll('.form-field');
-const inputArr = [...inputNodeList];
 
 //_MOL button and related elements
 const molBtn = document.getElementById('mol-btn');
@@ -125,6 +84,42 @@ molBtn.addEventListener('click', () => {
 
 });
 
+//-----------------Email fields-----------------
+const e1 = document.getElementById('email');
+const e2 = document.getElementById('confirm-email');
+const eIcon = document.getElementById('email-icon');
+
+e1.addEventListener('input', () => {
+    let regex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(e1.value === '') {
+        eIcon.classList.replace("fa-circle-check", "fa-envelope");
+        return;
+    }
+
+    if(e1.value.match(regex)) {
+        eIcon.classList.replace("fa-envelope", "fa-circle-check");
+
+    } else {
+        eIcon.classList.replace("fa-circle-check", "fa-envelope");
+    }
+});
+
+//-----------------Password fields-----------------
+
+const p1 = document.getElementById('password');
+const p2 = document.getElementById('confirm-password');
+
+//These variables are used for testing purposes
+let number = 3;
+let greeting = 'hello';
+let fakeArr = [];
+let fakeRadioBtn = '';
+
+//_Continue button and Input fields
+const continueBtn = document.getElementById('continue-btn');
+const inputNodeList = document.querySelectorAll('.form-field');
+const inputArr = [...inputNodeList];
 
 //-----------------Classes-----------------
 const eVal = new EmptyValidator(inputArr, baRadio);
