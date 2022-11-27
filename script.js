@@ -56,7 +56,7 @@ question.addEventListener('click', () => {
     answer.classList.toggle('answer-wrapper-toggle');
 });
 
-//_Title field and select element: color styling
+//_Title field - select element color styling
 const selectField = document.getElementById('user-title');
 
 selectField.addEventListener( 'input', () => {
@@ -69,13 +69,24 @@ selectField.addEventListener( 'input', () => {
     }
 });
 
+//_Info for related elements
+const infoTitle = document.getElementById('info-title');
+const infoLeft = document.getElementById('info-left');
+const infoRight = document.getElementById('info-right');
+const infoVLine = document.getElementById('info-v-line');
+
+infoTitle.addEventListener('click', () => {
+    infoLeft.classList.toggle('info-toggle');
+    infoRight.classList.toggle('info-toggle');
+    infoVLine.classList.toggle('info-v-line-toggle');
+});
+
+
 //_MOL button and related elements
 const molBtn = document.getElementById('mol-btn');
 const molUl = document.getElementById('mol-ul');
 const faUp = document.getElementById('fa-up');
 const faDown = document.getElementById('fa-down');
-
-console.log(molBtn);
 
 molBtn.addEventListener('click', () => {
     molUl.classList.toggle('mol-ul-toggle');
