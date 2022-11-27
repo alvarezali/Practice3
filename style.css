@@ -51,6 +51,7 @@
 --info_for:rgba(45, 48, 57, 1);
 --info_for_hover:rgba(68, 72, 86, 1);
 --black: rgba(0, 0, 0, 1);
+--red: rgba(255, 0, 0, 1);
 --gray: rgba(100, 100, 100, 1);
 --gray_75: rgba(100, 100, 100, .75);
 --gray_50: rgba(100, 100, 100, .5);
@@ -863,6 +864,7 @@
 small {
     display: inline-block;
     height: 1.75rem;
+    color: var(--red);
 }
 
 .name-wrapper, .email-wrapper, .phone-wrapper {
@@ -941,15 +943,11 @@ small {
     border-radius: .25rem;
     padding: .25rem;
     color: var(--white);
-    background: linear-gradient(var(--continue-btn_95), var(--continue-btn));
+    background: linear-gradient(var(--continue-btn_90), var(--continue-btn));
 }
 
 .continue-btn:hover {
     background: var(--continue-btn_5darker);
-}
-
-.continue-btn:focus, .continue-btn:active {
-    background: var(--black);
 }
 
 /*===========================
@@ -1236,13 +1234,13 @@ Primary and Secondary footer
     }
 
     .mol-container {
-        align-items: flex-start;
+        align-items: center;
         margin: 0 0 0 2rem;
     }
 
     .mol-ul {
         position: absolute;
-        left: .75rem;
+        left: 5.20rem;
         bottom: 3rem;
         padding: 0;
         margin: 0;

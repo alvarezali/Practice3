@@ -32,7 +32,7 @@ class EmptyValidator {
                 smElement.innerHTML = 'This field cannot be empty';
                 smName = 'sm-';
                 result = false;
-
+                
             } else {
                 smName = `${smName}${this.arr[i].id}`
                 smElement = document.getElementById(smName)
