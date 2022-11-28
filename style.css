@@ -1234,13 +1234,13 @@ Primary and Secondary footer
     }
 
     .mol-container {
-        align-items: center;
+        align-items: flex-start;
         margin: 0 0 0 2rem;
     }
 
     .mol-ul {
         position: absolute;
-        left: 5.20rem;
+        left: .75rem;
         bottom: 3rem;
         padding: 0;
         margin: 0;
@@ -1354,6 +1354,7 @@ Primary and Secondary footer
         background: linear-gradient(var(--create-bottom), 1%, var(--pri-foot_dark10) 3%, var(--pri-foot_dark));
     }
 
+
     .info-title {
         position: relative;
         width: 100%;
@@ -1378,7 +1379,7 @@ Primary and Secondary footer
         top: 1.54rem;
         left: .75rem;
         width: .90rem;
-        height: .13rem;
+        height: .12rem;
         background: var(--white);
     }
 
